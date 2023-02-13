@@ -6,7 +6,14 @@
         
         <!-- Lucene index configuration -->
         <lucene>
-            <analyzer class="org.apache.lucene.analysis.standard.StandardAnalyzer"/>
+            <analyzer class="com.evolvedbinary.lucene.analyzer.OhAnalyzer">
+                <param name="punctuationDictionary" type="char[]">
+                    <value>'</value>
+                    <value>-</value>
+                    <value>’</value>
+                </param>
+                <param name="minimumTermLength" type="int" value="2"/>
+            </analyzer>
             <text qname="persName"/>
         </lucene>
         
